@@ -1,0 +1,17 @@
+{
+  "name": "shadowsocks-ws",
+  "version": "1.0.0",
+  "description": "Shadowsocks over WebSocket",
+  "engines": {
+    "node": "v15.8.0",
+    "npm": "v7.5.1"
+  },
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "ws": "^7.4.3"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT"
+}
