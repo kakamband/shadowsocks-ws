@@ -54,7 +54,7 @@ Found an SSH public key at /home/xxxx/.ssh/id_rsa.pub
 
 如果你还没有 SSH 公钥，请阅读 [生成/添加SSH公钥](https://gitee.com/help/articles/4181)。
 
-克隆代码到本地，进入项目根目录：
+克隆代码到本地：
 
 ```shell
 $ git clone https://github.com/totravel/shadowsocks-ws.git
@@ -86,9 +86,9 @@ $ heroku config:set METHOD="chacha20-ietf-poly1305" PASS=123456
 $ git push heroku master
 ```
 
-## 客户端配置
+## 本地配置
 
-安装本地组件：
+安装：
 
 ```shell
 $ npm install
@@ -106,7 +106,7 @@ $ npm install
 }
 ```
 
-双击命令脚本 `start.cmd` 启动本地组件：
+双击命令脚本 `start.cmd` 打开本地组件：
 
 ```shell
 config loaded
@@ -116,12 +116,13 @@ cookie saved
 server started
 ```
 
-复制第二行 `ss://*****@127.0.0.1:8787`，打开 Shadowsocks 客户端，在托盘区找到 Shadowsocks 客户端的图标 > 右击 > 服务器 > 从剪贴板导入 URL > ... > 确定。
+首次使用，须完成下列步骤：
 
-在浏览器中使用（以 Firefox 为例）：
+1. 复制命令脚本输出的第二行 `ss://*****@127.0.0.1:8787`，打开 Shadowsocks 客户端，在托盘区找到 Shadowsocks 客户端的图标 > 右击 > 服务器 > 从剪贴板导入 URL > … > 确定。
+1. 右击 Shadowsocks 客户端的图标 > PAC 模式 > 编辑 Geosite 的用户规则… > 在文件 `user-rule.txt` 中追加一行：`@@||herokuapp.com`
+1. 右击 Shadowsocks 客户端的图标 > 系统代理 > PAC 模式
 
-1. 右击 Shadowsocks 客户端的图标 > PAC 模式 > 复制本地 PAC 网址。
-1. 打开浏览器 > 菜单 > 选项 > 网络设置（最底部） > 自动代理配置的 URL（PAC） > 粘贴 > 确定。
+此后只须打开本地组件和 Shadowsocks 客户端即可。
 
 ## 许可协议
 
